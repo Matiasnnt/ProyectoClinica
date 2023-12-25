@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        
+        <nav class="navbar navbar-expand-lg navbar text-bg-success  sticky-top " data-bs-theme="bg-light">
+            <div class="container-fluid  ">
+              <img class="logoImg  d-lg-block img-fluid" src="./images/logo transparente.png" alt="logoClinica" width="30" height="30">
+              <a class="navbar-brand" href="#">Clinica Rolling</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse  " id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="Index.html" target="_blank">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="error404.html" target="_blank">Registrarse</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="error404.html" target="_blank">Entrar</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Especialidades
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Traumatologia</a></li>
+                      <li><a class="dropdown-item" href="#">Dermatologia</a></li>
+                      <li><a class="dropdown-item" href="#">Gastroenterologia</a></li>
+                      <li><a class="dropdown-item" href="#">Estetica</a></li>
+                      <li><a class="dropdown-item" href="#">Otorrinolaringologia</a></li>
+                      <li><a class="dropdown-item" href="#">Cirugia</a></li>
+                      <li><a class="dropdown-item" href="#">Laboratorio</a></li>
+                      
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="PanelMedicos.html" id="verTurnosMedico">Ver Turnos (Médico)</a>
+                  </li>
+                </ul>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Buscar especialidad" aria-label="Search">
+                  <button class="btn btn-outline-dark" type="submit">Buscar </button>
+                </form>
+                
+              </div>
+            </div>
+          </nav>
+    </header>
+    
+    
+    <main>
+      <section class="justify-content-center">
+        <div class="container mt-5">
+          <div class="row justify-content-center">
+              <h1 class="text-center mt-2">Bienvenido al Sistema de Turnos Online</h1>
+              <p class="text-center mt-2">Podrá acceder de manera rápida y sencilla a la reserva de turnos. Podrá elegir la especialidad y el médico que usted desee.</p>
+          </div>
+        </div>
+        <div class="container">
+          <form class="row justify-content-center" id="formCita">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="especialidad" class="form-label">Especialidades</label>
+                    <select class="form-select" aria-label="Default select example" id="especialidad">
+                      <option selected value="0">Elija una especialidad</option>
+                      <option value="1">Traumatologia</option>
+                      <option value="2">Dermatologia</option>
+                      <option value="3">Gastroenterologia</option>
+                      <option value="4">Estetica</option>
+                      <option value="5">Otorrinolaringologia</option>
+                      <option value="6">Cirugia</option>
+                      <option value="7">Laboratorio</option>
+                    </select>
+                </div>
+                <div class="mb-3 ">
+                  <label for="especialidad" class="form-label">Horario</label>
+                    <select class="form-select" aria-label="Default select example" id="hora" >
+                      <option selected value="0">Elija un horario</option>
+                      <option value="1">Mañana</option>
+                      <option value="2">Tarde</option>
+                    </select>
+                    <button type="button" class="btn btn-success w-auto mt-4" onclick="validar()" value="validar">Buscar</button>
+                </div>
+                <div class="mb-3">
+                  <label for="especialidad" class="form-label">Medico Disponible</label>
+                    <select class="form-select" aria-label="Default select example" id="agregarMedico" >
+                      <option selected value="">Elija un medico</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlTextarea1" class="form-label">Consulta</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  <button type="submit" class="btn btn-success w-100 mt-4" onclick="enviarTurno()">Enviar</button>
+
+                </div>
+            </div>
+          </form>
+        </div>
+               
+     </section>
+        
+        
+    </main>
+
+    <footer >
+        <div class="container-fluid text-bg-success pb-2 justify-content-center mt-5">
+      
+            <div class="row p-5 pb-2  text-black justify-content-center text-start ">
+                <div class="col-xs-12 text-center col-md-6 col-lg-3 ">
+                <figure>
+                    <a href="#">
+                      <img class="w-50 h-55 mt-5"  src="./images/logo transparente.png" alt="logoClinica">
+                    </a>
+                </figure>
+            </div>
+                <div class=" col-xs-12 col-md-6 col-lg-3 mb-3 p-5 pb-2 ">
+                <h2 class="flex-column col-xs-12 text-center col-lg-3 text-start">SUCURSALES</h2>
+                <br>
+                <ul>
+                  <li>San Miguel de Tucumán</li>
+                <li>Yerba Buena</li>
+                <li>Concepción</li>
+                <li>Monteros</li>
+                <li>Alberdi</li>
+                </ul>
+                
+                
+            </div>
+      
+            <div class="col-xs-12 col-md-6 col-lg-3 mb-3 p-5 pb-2 ">
+                
+                <h2 class="flex-column col-xs-12 text-center col-lg-3 text-start">ATENCIÓN</h2>
+                <br>
+                <ul>
+                  <li>Entre Ríos 130</li>
+                <li>Lunes a Viernes: 08:00 a 16:00 Hs</li>
+                <li>Sabados: 08:00 a 12:00 Hs</li>
+                </ul>
+                
+            </div>
+                <div class="socialMedia col-xs-12 col-md-6 col-lg-3 d-flex flex-column justify-content-between d-flex  text-center mb-3 p-5 pb-2 " style="height: 200px">
+                <h2 class="flex-column text-start col-xs-12 text-center  ">GET IN TOUCH</h2>
+                        <a href="http://www.facebook.com "><i class="fa-brands fa-facebook text-black "></i></a>
+                        <a href="http://www.twitter.com "><i class="fa-brands fa-twitter text-black"></i></a>
+                        <a href="http://www.instagram.com "><i class="fa-brands fa-instagram text-black"></i></a>
+            </div>
+      
+            <div class="copyRight col-xs-12 pt-4 d-flex justify-content-center text-center ">
+                <p>&copy;2023 <b>Clinica Rolling</b> - www.clinicarolling.com </p>
+            </div>
+            
+      
+        </div>
+      </footer>
+
+    
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="./pacientes.js"></script>
+
+</body>
+</html>
