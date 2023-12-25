@@ -59,6 +59,7 @@ const medicos = [
         option.value = medico.nombre
         selectMedico.add(option)
       }
+      // Guarda los datos en el localStorage
       let datos = {
         especialidad: especialidadSeleccionada,
         hora: horaSeleccionada,
