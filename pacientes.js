@@ -59,6 +59,12 @@ const medicos = [
         option.value = medico.nombre
         selectMedico.add(option)
       }
+      let datos = {
+        especialidad: especialidadSeleccionada,
+        hora: horaSeleccionada,
+        medicos: medicosFiltrados
+      }
+      localStorage.setItem('datos', JSON.stringify(datos))
     }
   }
 
