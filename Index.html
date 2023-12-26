@@ -10,7 +10,6 @@
 </head>
 <body>
     <header>
-        
         <nav class="navbar navbar-expand-lg navbar text-bg-success  sticky-top " data-bs-theme="bg-light">
             <div class="container-fluid  ">
               <img class="logoImg  d-lg-block img-fluid" src="./images/logo transparente.png" alt="logoClinica" width="30" height="30">
@@ -24,36 +23,34 @@
                     <a class="nav-link active" aria-current="page" href="Index.html" target="_blank">Inicio</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="RegistroPacientes.html.html" target="_blank">Registrarse</a>
+                    <div class="dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Registrarse
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="RegistroMedicos.html">Médicos</a></li>
+                            <li><a class="dropdown-item" href="RegistroPacientes.html.html">Pacientes</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Entrar
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="RegistroMedicos.html">Médicos</a></li>
+                            <li><a class="dropdown-item" href="RegistroPacientes.html.html">Pacientes</a></li>
+                        </ul>
+                    </div>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="error404.html" target="_blank">Entrar</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Especialidades
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Traumatologia</a></li>
-                      <li><a class="dropdown-item" href="#">Dermatologia</a></li>
-                      <li><a class="dropdown-item" href="#">Gastroenterologia</a></li>
-                      <li><a class="dropdown-item" href="#">Estetica</a></li>
-                      <li><a class="dropdown-item" href="#">Otorrinolaringologia</a></li>
-                      <li><a class="dropdown-item" href="#">Cirugia</a></li>
-                      <li><a class="dropdown-item" href="#">Laboratorio</a></li>
-                      
-                    </ul>
+                    <a class="nav-link" href="pacientes.html" id="verTurnosMedico">Solicitar turnos</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="PanelMedicos.html" id="verTurnosMedico">Ver Turnos (Médico)</a>
                   </li>
                 </ul>
-                </ul>
-                <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Buscar especialidad" aria-label="Search">
-                  <button class="btn btn-outline-dark" type="submit">Buscar </button>
-                </form>
-                
               </div>
             </div>
           </nav>
@@ -202,12 +199,15 @@
 
       <div class="col-xs-12 col-md-6 col-lg-3 mb-3 p-5 pb-2 ">
           
-          <h2 class="flex-column col-xs-12 text-center col-lg-3 text-start">ATENCIÓN</h2>
+          <h2 class="flex-column col-xs-12 text-center col-lg-3 text-start">ESPECIALIDADES</h2>
           <br>
           <ul>
-            <li>Entre Ríos 130</li>
-          <li>Lunes a Viernes: 08:00 a 16:00 Hs</li>
-          <li>Sabados: 08:00 a 12:00 Hs</li>
+            <li>Traumatologia</li>
+          <li>Dermatologia</li>
+          <li>Cirugia</li>
+          <li>Cardiologia</li>
+          <li>Laboratorio</li>
+          <li>Gastroenterologia</li>
           </ul>
           
       </div>
