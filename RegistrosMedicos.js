@@ -64,8 +64,8 @@ document.addEventListener('DOMContentLoaded', function () {
             // Almacenar el array actualizado en localStorage
             localStorage.setItem('medicos', JSON.stringify(medicosGuardados));
 
-            // Puedes redirigir a otra página o realizar otras acciones después del registro exitoso
-            alert('Registro exitoso');
+            // Redirigir al usuario a la página de inicio de sesión
+            window.location.href = 'loginmedicos.html';
 
             // Limpiar el formulario después del registro exitoso
             form.reset();

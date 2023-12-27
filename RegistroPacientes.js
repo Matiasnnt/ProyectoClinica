@@ -60,8 +60,8 @@ document.addEventListener('DOMContentLoaded', function() {
             usuariosGuardados.push(usuario);
             localStorage.setItem('usuarios', JSON.stringify(usuariosGuardados));
 
-            // Puedes redirigir a otra página o realizar otras acciones después del registro exitoso
-            alert('Registro exitoso');
+            // Redirigir al usuario a la página de inicio de sesión
+            window.location.href = 'loginpacientes.html';
         }
     });
 
