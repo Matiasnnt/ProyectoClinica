@@ -103,11 +103,11 @@ let tabla = document.getElementById('tablaTurnos')
 // Obtener los datos de localStorage
 let datos = JSON.parse(localStorage.getItem('datos'))
 
-// Limpiar la tabla
-tabla.innerHTML = ''
-
 // Verificar si hay datos
 if (datos) {
+    // Limpiar la tabla
+    tabla.innerHTML = ''
+
     // Crear las filas de la tabla
     let fila = `<tr>
                     <td>${datos.medicos}</td>
