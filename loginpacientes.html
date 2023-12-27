@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar text-bg-success  sticky-top " data-bs-theme="bg-light">
+        <div class="container-fluid  ">
+          <img class="logoImg  d-lg-block img-fluid" src="./images/logo transparente.png" alt="logoClinica" width="30" height="30">
+          <a class="navbar-brand" href="#">Clinica Rolling</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse  " id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Index.html" target="_blank">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <div class="dropdown">
+                    <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Registrarse
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="RegistroMedicos.html">Médicos</a></li>
+                        <li><a class="dropdown-item" href="RegistroPacientes.html">Pacientes</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <div class="dropdown">
+                    <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Entrar
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="">Médicos</a></li>
+                        <li><a class="dropdown-item" href="">Pacientes</a></li>
+                    </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pacientes.html" id="verTurnosMedico">Solicitar turnos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="PanelMedicos.html" id="verTurnosMedico">Ver Turnos (Médico)</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+</header>
+    <main>
+        <section class="container mt-5">
+                <div class="row justify-content-center px-4">
+                    <div class="col-12 py-4 px-4 col-sm-9 col-md-7 col-lg-5 border border-2 border-success shadow-lg p-5 mb-5 bg-body-tertiary rounded">
+                        <h1 class="text-center mb-4">Login Pacientes</h1>
+                        <form>
+                            <div class="mb-3">
+                              <label for="exampleUser" class="form-label">Usuario</label>
+                              <input type="text" class="form-control" id="usuario" aria-describedby="userhelp" required>
+                            </div>
+                            <div class="mb-3">
+                              <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                              <input type="password" class="form-control" id="contrasena" required>
+                            </div>
+                            <button type="submit" class="btn btn-success center w-100" id="enviar">Iniciar Sesion</button>
+                          </form>
+                    </div>
+                </div>
+        </section>
+    </main>
+
+    <footer >
+      <div class="container-fluid text-bg-success pb-2 justify-content-center ">
+    
+          <div class="row p-5 pb-2  text-black justify-content-center text-start ">
+              <div class="col-xs-12 text-center col-md-6 col-lg-3 ">
+              <figure>
+                  <a href="#">
+                    <img class="w-50 h-55 mt-5"  src="./images/logo transparente.png" alt="logoClinica">
+                  </a>
+              </figure>
+          </div>
+              <div class=" col-xs-12 col-md-6 col-lg-3 mb-3 p-5 pb-2 ">
+              <h2 class="flex-column col-xs-12 text-center col-lg-3 text-start">SUCURSALES</h2>
+              <br>
+              <ul>
+                <li>San Miguel de Tucumán</li>
+              <li>Yerba Buena</li>
+              <li>Concepción</li>
+              <li>Monteros</li>
+              <li>Alberdi</li>
+              </ul>
+              
+              
+          </div>
+    
+          <div class="col-xs-12 col-md-6 col-lg-3 mb-3 p-5 pb-2 ">
+              
+              <h2 class="flex-column col-xs-12 text-center col-lg-3 text-start">ESPECIALIDADES</h2>
+              <br>
+              <ul>
+                <li>Traumatología</li>
+              <li>Dermatología</li>
+              <li>Cirugía</li>
+              <li>Cardiología</li>
+              <li>Laboratorío</li>
+              <li>Gastroenterología</li>
+              </ul>
+              
+          </div>
+              <div class="socialMedia col-xs-12 col-md-6 col-lg-3 d-flex flex-column justify-content-between d-flex  text-center mb-3 p-5 pb-2 " style="height: 200px">
+              <h2 class="flex-column text-start col-xs-12 text-center  ">GET IN TOUCH</h2>
+                      <a href="http://www.facebook.com "><i class="fa-brands fa-facebook text-black "></i></a>
+                      <a href="http://www.twitter.com "><i class="fa-brands fa-twitter text-black"></i></a>
+                      <a href="http://www.instagram.com "><i class="fa-brands fa-instagram text-black"></i></a>
+          </div>
+    
+          <div class="copyRight col-xs-12 pt-4 d-flex justify-content-center text-center ">
+              <p>&copy;2023 <b>Clinica Rolling</b> - www.clinicarolling.com </p>
+          </div>
+          
+    
+      </div>
+    </footer>
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="./loginpacientes.js"></script>
+</body>
+</html>
