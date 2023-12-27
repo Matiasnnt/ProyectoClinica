@@ -4,6 +4,14 @@
         const turnosPacientesBody = document.getElementById('turnosPacientesBody');
         turnosPacientesBody.innerHTML = '';
 
+        //reucpera los turnos de localstorage
+        let turnos = localStorage.getItem('datos')
+        if (turnos) {
+            //convierte los turnos en un array
+            turnos = JSON.parse(turnos)
+
+        }
+
         turnos.forEach(turno => {
             const fila = document.createElement('tr');
             fila.innerHTML = `
@@ -15,20 +23,4 @@
         });
     }
 
-    // Función para buscar turnos por el nombre del médico
-    function buscarTurnosMedico() {
-        const nombreMedico = document.getElementById('nombreMedico').value;
-        const turnosFiltrados = turnosPacientes.filter(turno => turno.medico.includes(nombreMedico));
-        cargarTurnosPacientes(turnosFiltrados);
-        if (turnosFiltrados.length > 0) {
-            cargarTurnosPacientes(turnosFiltrados);
-        } else {
-            alert('No se encontraron turnos para el médico ingresado.');
-        }
-    }
-
     
-
-    // Llamada a la función para cargar los turnos de pacientes al cargar la página
-    cargarTurnosPacientes(turnosPacientes);
-
