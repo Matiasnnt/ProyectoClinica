@@ -1,115 +1,213 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Validacion de formulario con Javascript</title>
-    <link rel="stylesheet" href="RegistroPacientes.css.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>CLINICA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background-color: #28a745;
+        }
+
+        main {
+            padding: 30px 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px 0px #888888;
+            max-width: 400px; 
+            margin: 0 auto; 
+        }
+
+        .form-group {
+            margin-bottom: 15px; 
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar text-bg-success  sticky-top " data-bs-theme="bg-light">
+            <div class="container-fluid  ">
+              <img class="logoImg  d-lg-block img-fluid" src="./images/logo transparente.png" alt="logoClinica" width="30" height="30">
+              <a class="navbar-brand" href="#">Clinica Rolling</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse  " id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="Index.html" target="_blank">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <div class="dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Registrarse
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="RegistroMedicos.html">Médicos</a></li>
+                            <li><a class="dropdown-item" href="RegistroPacientes.html">Pacientes</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Entrar
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="loginmedicos.html">Médicos</a></li>
+                            <li><a class="dropdown-item" href="loginpacientes.html">Pacientes</a></li>
+                        </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="pacientes.html" id="verTurnosMedico">Solicitar turnos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="PanelMedicos.html" id="verTurnosMedico">Ver Turnos (Médico)</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+
     <main>
-        <form action="" class="formulario" id="formulario">
-            <!-- Grupo: Usuario -->
-            <div class="formulario__grupo" id="grupo__usuario">
-                <label for="usuario" class="formulario__label">Usuario</label>
-                <div class="formulario__grupo-input">
-                    <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="Juan_Perez03">
-                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        <div class="container mt-5">
+            <form id="formularioPacientes" class="needs-validation" novalidate>
+                <h2 class="mb-4">Registro de Pacientes</h2>
+        
+                
+                <div class="form-group">
+                    <label for="usuario">Usuario</label>
+                    <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario" required>
+                    <div class="invalid-feedback">Por favor, ingrese un usuario válido.</div>
                 </div>
-                <p class="formulario__input-error">El usuario tiene que ser de 6 a 16 dígitos y solo puede contener números, letras y guion bajo.</p>
-            </div>
-
-            <!-- Grupo: Nombre -->
-            <div class="formulario__grupo" id="grupo__nombre">
-                <label for="nombre" class="formulario__label">Nombre</label>
-                <div class="formulario__grupo-input">
-                    <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Juan">
-                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        
+                
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
+                    <div class="invalid-feedback">Por favor, ingrese un nombre válido.</div>
                 </div>
-                <p class="formulario__input-error">El nombre solo puede contener de 3 a 10 caracteres.</p>
-            </div>
-
-            <!-- Grupo: Apellido -->
-            <div class="formulario__grupo" id="grupo__apellido">
-                <label for="apellido" class="formulario__label">Apellido</label>
-                <div class="formulario__grupo-input">
-                    <input type="text" class="formulario__input" name="apellido" id="apellido" placeholder="Perez">
-                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        
+                
+                <div class="form-group">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" required>
+                    <div class="invalid-feedback">Por favor, ingrese un apellido válido.</div>
                 </div>
-                <p class="formulario__input-error">El apellido solo puede contener de 5 a 16 letras.</p>
-            </div>
-
-            <!-- Grupo: Contraseña -->
-            <div class="formulario__grupo" id="grupo__password">
-                <label for="password" class="formulario__label">Contraseña</label>
-                <div class="formulario__grupo-input">
-                    <input type="password" class="formulario__input" name="password" id="password">
-                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        
+                
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" required>
+                    <div class="invalid-feedback">La contraseña debe tener al menos 6 caracteres.</div>
                 </div>
-                <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
-            </div>
-
-            <!-- Grupo: Contraseña2 -->
-            <div class="formulario__grupo" id="grupo__password2">
-                <label for="password2" class="formulario__label">Repetir Contraseña</label>
-                <div class="formulario__grupo-input">
-                    <input type="password" class="formulario__input" name="password2" id="password2">
-                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        
+                
+                <div class="form-group">
+                    <label for="password2">Repetir Contraseña</label>
+                    <input type="password" class="form-control" id="password2" name="password2" placeholder="Repetir Contraseña" required>
+                    <div class="invalid-feedback">Las contraseñas no coinciden.</div>
                 </div>
-                <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
-            </div>
-
-            <!-- Grupo: Correo Electrónico -->
-            <div class="formulario__grupo" id="grupo__correo">
-                <label for="correo" class="formulario__label">Correo Electrónico</label>
-                <div class="formulario__grupo-input">
-                    <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@gmail.com">
-                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        
+                
+                <div class="form-group">
+                    <label for="correo">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="correo" name="correo" placeholder="Correo Electrónico" required>
+                    <div class="invalid-feedback">Por favor, ingrese un correo electrónico válido.</div>
                 </div>
-                <p class="formulario__input-error">El correo electrónico debe ser válido.</p>
-            </div>
-
-            <!-- Grupo: Obra Social -->
-            <div class="formulario__grupo" id="grupo__obrasocial">
-                <label for="Obrasocial" class="formulario__label">Obra Social</label>
-                <div class="formulario__grupo-input">
-                    <input type="text" class="formulario__input" name="Obrasocial" id="Obrasocial" placeholder="Ejemplo: Subsidio de Salud">
-                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        
+                
+                <div class="form-group">
+                    <label for="obrasocial">Obra Social</label>
+                    <input type="text" class="form-control" id="obrasocial" name="obrasocial" placeholder="Obra Social" required>
+                    <div class="invalid-feedback">Por favor, ingrese una obra social válida.</div>
                 </div>
-                <p class="formulario__input-error">La descripción debe contener entre 4 y 20 caracteres.</p>
-            </div>
-
-            <!-- Grupo: Celular -->
-            <div class="formulario__grupo" id="grupo__celular">
-                <label for="celular" class="formulario__label">Teléfono o Celular</label>
-                <div class="formulario__grupo-input">
-                    <input type="text" class="formulario__input" name="celular" id="celular" placeholder="3814065394">
-                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        
+                
+                <div class="form-group">
+                    <label for="celular">Teléfono o Celular</label>
+                    <input type="tel" class="form-control" id="celular" name="celular" placeholder="Teléfono o Celular" required>
+                    <div class="invalid-feedback">Por favor, ingrese un teléfono o celular válido.</div>
                 </div>
-                <p class="formulario__input-error">Debe colocar el área (381) y su número telefónico.</p>
-            </div>
-
-            <!-- Grupo: Términos y Condiciones -->
-            <div class="formulario__grupo" id="grupo__terminos">
-                <label class="formulario__label">
-                    <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
-                    Acepto los Términos y Condiciones
-                </label>
-            </div>
-
-            <div class="formulario__mensaje" id="formulario__mensaje">
-                <p><i class="fas fa-exclamation-triangle"></i><b>Error:</b> Por favor, rellena el formulario correctamente.</p>
-            </div>
-
-            <div class="formulario__grupo formulario__grupo-btn-enviar">
-                <button type="submit" class="formulario__btn">Enviar</button>
-                <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">¡Formulario enviado exitosamente!</p>
-            </div>
-        </form>
+        
+                
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="terminos" required>
+                    <label class="form-check-label" for="terminos">Acepto los Términos y Condiciones</label>
+                    <div class="invalid-feedback">Debe aceptar los términos y condiciones.</div>
+                </div>
+        
+                <button type="submit" class="btn btn-primary">Registrar</button>
+            </form>
+        </div>
     </main>
 
+    <footer>
+        <div class="container-fluid text-bg-success pb-2 justify-content-center ">
+    
+            <div class="row p-5 pb-2  text-black justify-content-center text-start ">
+                <div class="col-xs-12 text-center col-md-6 col-lg-3 ">
+                <figure>
+                    <a href="#">
+                      <img class="w-50 h-55 mt-5"  src="./images/logo transparente.png" alt="logoClinica">
+                    </a>
+                </figure>
+            </div>
+                <div class=" col-xs-12 col-md-6 col-lg-3 mb-3 p-5 pb-2 ">
+                <h2 class="flex-column col-xs-12 text-center col-lg-3 text-start">SUCURSALES</h2>
+                <br>
+                <ul>
+                  <li>San Miguel de Tucumán</li>
+                <li>Yerba Buena</li>
+                <li>Concepción</li>
+                <li>Monteros</li>
+                <li>Alberdi</li>
+                </ul>
+                
+                
+            </div>
+    
+            <div class="col-xs-12 col-md-6 col-lg-3 mb-3 p-5 pb-2 ">
+                
+                <h2 class="flex-column col-xs-12 text-center col-lg-3 text-start">ESPECIALIDADES</h2>
+                <br>
+                <ul>
+                  <li>Traumatología</li>
+                <li>Dermatología</li>
+                <li>Cirugía</li>
+                <li>Cardiología</li>
+                <li>Laboratorío</li>
+                <li>Gastroenterología</li>
+                </ul>
+                
+            </div>
+                <div class="socialMedia col-xs-12 col-md-6 col-lg-3 d-flex flex-column justify-content-between d-flex  text-center mb-3 p-5 pb-2 " style="height: 200px">
+                <h2 class="flex-column text-start col-xs-12 text-center  ">GET IN TOUCH</h2>
+                        <a href="http://www.facebook.com "><i class="fa-brands fa-facebook text-black "></i></a>
+                        <a href="http://www.twitter.com "><i class="fa-brands fa-twitter text-black"></i></a>
+                        <a href="http://www.instagram.com "><i class="fa-brands fa-instagram text-black"></i></a>
+            </div>
+    
+            <div class="copyRight col-xs-12 pt-4 d-flex justify-content-center text-center ">
+                <p>&copy;2023 <b>Clinica Rolling</b> - www.clinicarolling.com </p>
+            </div>
+            
+    
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" ></script>
     <script src="RegistroPacientes.js"></script>
-    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 </body>
 </html>
