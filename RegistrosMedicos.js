@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
         password: /^.{4,12}$/,
         password2: /^.{4,12}$/,
         correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-        especialidad: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
         telefono: /^\d{7,14}$/
     };
 
@@ -50,12 +49,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Si todas las validaciones son exitosas, guardamos los campos en localStorage
         if (form.checkValidity() && !form.querySelector('.is-invalid')) {
+            // Obtener la especialidad seleccionada
+            const especialidadSeleccionada = document.getElementById('especialidad').value;
+
             const medico = {};
             for (const campo of form.elements) {
                 if (campo.type !== 'checkbox') {
                     medico[campo.name] = campo.value;
                 }
             }
+
+            // Agregar la especialidad al objeto medico
+            medico.especialidad = especialidadSeleccionada;
 
             // Obtener datos actuales de localStorage o inicializar un array vacío
             const medicosGuardados = JSON.parse(localStorage.getItem('medicos')) || [];
