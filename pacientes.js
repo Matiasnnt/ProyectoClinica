@@ -31,7 +31,7 @@ const medicos = [
     { nombre: 'Medico 7', especialidad: '7', horarios: ['1', '2'] },
 
   ]
-  
+
   // Escucha los cambios en los campos de especialidad y hora
   document.getElementById('especialidad').addEventListener('change', actualizarMedicosDisponibles)
   document.getElementById('hora').addEventListener('change', actualizarMedicosDisponibles)
@@ -94,3 +94,28 @@ const medicos = [
     // Limpia el formulario
     this.reset()
 })
+
+// Mostrar el turno seleccionado
+
+// Obtener el elemento de la tabla
+let tabla = document.getElementById('tablaTurnos')
+
+// Obtener los datos de localStorage
+let datos = JSON.parse(localStorage.getItem('datos'))
+
+// Verificar si hay datos
+if (datos) {
+    // Crear las filas de la tabla
+    let fila = `<tr>
+                    <td>${datos.medicos}</td>
+                    <td>${datos.especialidad}</td>
+                    <td>${datos.hora}</td>
+                </tr>`;
+
+    // Agrega la fila a la tabla
+    tabla.innerHTML = fila;
+} else {
+    // Muestra un mensaje si no hay datos
+    tabla.innerHTML = '<tr><td colspan="3">No hay datos disponibles.</td></tr>';
+}
+
